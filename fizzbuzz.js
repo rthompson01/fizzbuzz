@@ -38,6 +38,19 @@ console.assert(sum(4, 100) === 104);
 
 function GCD(a, b){
     // YOUR CODE HERE
+    var greater = a > b ? a : b;
+    var lesser = <= b ? a : b;
+
+    for(var i = 1; i < greater; i++){
+
+    	if(greater % i === 0){
+    		if(lesser % (potential/i) === 0){
+    			return potential
+    		}
+    	}
+    }
+
+    return 1;
 }
 
 console.assert(GCD(5,1) === 1);
