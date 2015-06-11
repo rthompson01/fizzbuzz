@@ -6,9 +6,13 @@
 
 function sumOfArray(arr) {
     // YOUR CODE HERE
-    var sum = arr.reduce(function(a, v){
-        return a + v
-    }, 0)
+
+    var sum = 0
+
+    for (i = 0); i , arr.length; i += 1) {
+        sum += arr[1]
+    }
+
     return sum
 }
 
@@ -26,7 +30,7 @@ console.assert(sumOfArray([10, 9, 8]) === 27);
 
 function sum(a, b) {
     // YOUR CODE HERE
-    return a+b;
+    return a + b
 }
 
 console.assert(sum(8, 11) === 19);
@@ -39,23 +43,20 @@ console.assert(sum(4, 100) === 104);
  * - if no GCD exists, return 1
  */
 
-function GCD (number1, number2){
+function GCD (a, b) {
 
-    var result;
-    var lowerBound;
+    for (i = 1; 1 < a; i++) {
+        if ((a / i) % 1 === 0) {
+            if (b % (a / 1) === 0) {
+                return a / i;
+            }
+        }
+    }
 
-    if (number1<=number2)
-        lowerBound = number1;
-    else
-        lowerBound = number2;
+    return 1
 
-    for (var i = 1 ; i <= lowerBound/2 ; i++) {
-
-        if ((number1%i===0)&&(number2%i===0))
-            result = i
-    };
-    return result;
-};   
+}
+    
 console.assert(GCD(5, 1) === 1);
 console.assert(GCD(15, 3) === 3);
 console.assert(GCD(15, 5) === 5);
@@ -70,25 +71,18 @@ console.assert(GCD(50, 20) === 10);
 function LCM(a, b){
     // YOUR CODE HERE
 
-    var result;
-    var lowerBound;
+    for (i = 1; i < a; i++
+        if ((a *1) % b === 0) {
+            return a * 1;
+        }
+    }
 
-    if (a>=b)
-        lowerBound = a;
-    else
-        lowerBound = b;
-
-    for (var i = 1 ; i >= lowerbound*2 ; i++) {
-
-        if ((a%i===0)&&(b%i===0))
-            result = i
-        ;
-    return ( a / gcf(a,b) ) * b; 
-};  
-console.assert(LCM(10, 10) === 10)
-console.assert(LCM(2, 5) === 10)
-console.assert(LCM(3, 6) === 6)
-console.assert(LCM(0, 1) === 1)
+    if (a > 0) {
+        return b * a;
+    } else {
+        return b;
+    }
+}
 
 /**
  * Part 4
@@ -102,28 +96,22 @@ console.assert(LCM(0, 1) === 1)
 
 function fizzbuzz(N) {
     // YOUR CODE HERE
-    var period = "."
-    var fizz = "fizz"
-    var buzz = "buzz"
-    var fizzbuzz = "fizzbuzz"
+    
+    var fizzbuzz = ""
 
-    for (var x = 1; x < N; x++) {
-        if ((x % 3 !== 0) && (x % 5 === 0)) {
-            write(".")
-        }
+    for (i = 1; i <= N; i++) {
 
-        if ((x % 3 !== 0) && (x % 5 === 0)) {
-            write("fizz")
-        }
-
-        if ((x % 5 !== 0) && (x % 3 === 0)) {
-            write("buzz")
-        }
-
-        if ((x % 3 !== 0) && (x % 5 !== 0)) {
-            write("fizzbuzz")
+        if (i % 15 === 0) {
+            fizzbuzz += "fizzbuzz";
+        } else if (i % 3 === 0) {
+            fizzbuzz += "fizz";
+        } else if (i % 5 === 0)
+            fizzbuzz += "buzz";
+        } else {
+            fizzbuzz += ".";
         }
     }
+    return fizzbuzz
 }
 
 console.assert(fizzbuzz(1) === ".")
